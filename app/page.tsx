@@ -37,12 +37,11 @@ export default function Home() {
 
       {/* Moving announcement bar */}
       <div className="announcement-bar">
-        <marquee scrollamount="7">
-          📢 FINAL EXAM REGISTRATION CLOSES TODAY •
-          NEW ASSIGNMENT RELEASED •
-          COURSE DEADLINE APPROACHING •
-          LIVE SESSION STARTS SOON •
-        </marquee>
+<div className="ticker-text">
+  ✈ LIMITED TIME FLIGHT DEALS ✈
+  ONLY 1 ROOM LEFT ✈ 70% OFF ✈
+  BOOK NOW ✈ FREE BREAKFAST ✈
+</div>
       </div>
 
       {/* intrusive popup */}
@@ -73,13 +72,13 @@ export default function Home() {
         </ul>
       </aside>
 
-      {/* main content */}
+      {/* content */}
       <section className="content">
 
         {/* hero */}
         <section className="hero">
-          <div>
 
+          <div>
             <h1>
               Welcome Back, Student
             </h1>
@@ -95,7 +94,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* autoplay video */}
+          {/* autoplay lecture video */}
           <video
             autoPlay
             muted
@@ -109,13 +108,43 @@ export default function Home() {
           </video>
         </section>
 
+        {/* autoplay audio */}
+        <audio autoPlay loop>
+          <source
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            type="audio/mp3"
+          />
+        </audio>
+
         {/* blinking notice */}
         <section className="notice blink">
           ⚠ ASSIGNMENT DEADLINE:
           11:59 PM TODAY
         </section>
 
-        {/* dashboard stats */}
+        {/* rotating updates */}
+        <section className="rotating-banner pulse">
+
+          <h2>
+            🚨 Academic Updates
+          </h2>
+
+          <div className="rotating-card">
+            MIDTERM EXAM STARTS TOMORROW
+          </div>
+
+          <div className="rotating-card">
+            FINAL PROJECT SUBMISSION
+            CLOSES IN 8 HOURS
+          </div>
+
+          <div className="rotating-card">
+            NEW LIVE CLASS AVAILABLE NOW
+          </div>
+
+        </section>
+
+        {/* stats */}
         <section className="stats-grid">
 
           <div className="stat-card">
@@ -187,13 +216,21 @@ export default function Home() {
                 <button className="tiny-btn">
                   OPEN
                 </button>
+
+                {/* hidden clickable */}
+                <div
+                  className="ghost-click"
+                  tabIndex={0}
+                  title="hidden clickable"
+                />
               </div>
             ))}
 
           </div>
+
         </section>
 
-        {/* dense notice section */}
+        {/* dense notice board */}
         <section className="important">
 
           <h2>
@@ -216,7 +253,7 @@ export default function Home() {
             Please monitor notifications,
             deadlines, grade releases,
             and classroom changes to
-            avoid missing critical
+            avoid missing important
             academic information.
           </p>
 
@@ -240,6 +277,10 @@ export default function Home() {
           <div className="notification-card blink">
             ⚠ Exam registration closes
             today
+          </div>
+
+          <div className="notification-card shake">
+            🚨 Live lecture starts now
           </div>
 
         </section>
