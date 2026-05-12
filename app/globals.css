@@ -514,3 +514,117 @@ body {
     max-width: 100%;
   }
 }
+
+/* =====================================
+   STRICT FIX FOR WIDE READING LINES
+   45–70 characters max
+===================================== */
+
+/* constrain main readable area */
+.content {
+  max-width: 1000px;
+}
+
+/* prevent sections stretching too wide */
+.hero,
+.exam-popup,
+.rotating-banner,
+.important,
+.notifications,
+.courses {
+  max-width: 760px;
+}
+
+/* hero text wrapper */
+.hero > div {
+  max-width: 58ch;
+}
+
+/* ALL readable text */
+h1,
+h2,
+h3,
+p,
+.notice,
+.notification-card,
+.rotating-card,
+.course-tag,
+.dense-text,
+.exam-popup p,
+.hero p,
+.course-card p {
+  max-width: 60ch;
+}
+
+/* tighter limits for long reading */
+.dense-text {
+  max-width: 55ch;
+  margin: 0 auto;
+}
+
+.notification-card {
+  max-width: 58ch;
+}
+
+.rotating-card {
+  max-width: 58ch;
+}
+
+.notice {
+  max-width: 58ch;
+}
+
+/* course cards */
+.course-card {
+  max-width: 360px;
+}
+
+.course-card h3 {
+  max-width: 26ch;
+}
+
+.course-card p {
+  max-width: 42ch;
+}
+
+/* announcement text */
+.ticker-text {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* headings */
+.hero h1 {
+  max-width: 18ch;
+}
+
+.hero h2,
+.notifications h2,
+.courses h2,
+.important h2,
+.rotating-banner h2 {
+  max-width: 28ch;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero,
+  .exam-popup,
+  .rotating-banner,
+  .important,
+  .notifications,
+  .courses {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  .dense-text,
+  .notification-card,
+  .rotating-card,
+  .notice {
+    max-width: 100%;
+  }
+}
