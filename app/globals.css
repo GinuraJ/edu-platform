@@ -765,3 +765,92 @@ h3 {
     max-width: 100%;
   }
 }
+
+/* ==================================
+   STRICT PARAGRAPH WIDTH FIX
+================================== */
+
+/* all readable text */
+p,
+.notice,
+.notification-card,
+.rotating-card,
+.exam-popup p,
+.hero p,
+.dense-text,
+.course-card p {
+  width: 100%;
+  max-width: 60ch !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* long content areas */
+.hero > div,
+.exam-popup,
+.important,
+.rotating-banner,
+.notifications {
+  max-width: 65ch !important;
+}
+
+/* headings */
+h1 {
+  max-width: 18ch;
+}
+
+h2,
+h3 {
+  max-width: 28ch;
+}
+
+/* course cards */
+.course-card {
+  max-width: 320px !important;
+}
+
+.course-card h3 {
+  max-width: 24ch;
+}
+
+.course-card p {
+  max-width: 34ch !important;
+}
+
+/* notice board text */
+.dense-text {
+  max-width: 50ch !important;
+  line-height: 1.9;
+}
+
+/* notification/update cards */
+.notification-card,
+.rotating-card {
+  max-width: 50ch !important;
+}
+
+/* announcement text */
+.ticker-text {
+  max-width: 50ch !important;
+}
+
+/* desktop content width */
+.content {
+  max-width: 850px !important;
+}
+
+/* mobile reset */
+@media (max-width: 900px) {
+  p,
+  .notice,
+  .notification-card,
+  .rotating-card,
+  .dense-text,
+  .hero p {
+    max-width: 100% !important;
+  }
+
+  .course-card {
+    max-width: 100% !important;
+  }
+}
