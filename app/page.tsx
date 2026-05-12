@@ -32,52 +32,64 @@ export default function Home() {
     },
   ];
 
+  const menuItems = [
+    "Dashboard",
+    "My Courses",
+    "Assignments",
+    "Grades",
+    "Calendar",
+    "Support",
+  ];
+
   return (
     <main className="page">
-
-      {/* Moving announcement bar */}
+      {/* announcement bar */}
       <div className="announcement-bar">
-<div className="ticker-text">
-  ✈ LIMITED TIME FLIGHT DEALS ✈
-  ONLY 1 ROOM LEFT ✈ 70% OFF ✈
-  BOOK NOW ✈ FREE BREAKFAST ✈
-</div>
-      </div>
-
-      {/* intrusive popup */}
-      <div className="exam-popup">
-        <h2>⚠ Exam Alert</h2>
-
-        <p>
-          Midterm exam begins in
-          <strong> 2 Hours</strong>.
+        <p className="ticker-text">
+          Limited-time learning resources available •
+          New courses added this week •
+          Student support available 24/7
         </p>
-
-        <button>
-          START PREPARATION
-        </button>
       </div>
 
       {/* sidebar */}
       <aside className="sidebar">
         <h2>LearnHub</h2>
 
-        <ul>
-          <li>Dashboard</li>
-          <li>My Courses</li>
-          <li>Assignments</li>
-          <li>Grades</li>
-          <li>Calendar</li>
-          <li>Support</li>
-        </ul>
+        <nav aria-label="Sidebar navigation">
+          <ul>
+            {menuItems.map((item) => (
+              <li key={item}>
+                <button className="menu-btn">
+                  {item}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </aside>
 
       {/* content */}
       <section className="content">
 
+        {/* exam notice */}
+        <section className="exam-popup">
+          <h2>Exam Reminder</h2>
+
+          <p>
+            Your midterm exam begins in
+            <strong> 2 hours</strong>.
+            Review key materials and
+            prepare ahead of time.
+          </p>
+
+          <button className="primary-btn">
+            Start Preparation
+          </button>
+        </section>
+
         {/* hero */}
         <section className="hero">
-
           <div>
             <h1>
               Welcome Back, Student
@@ -86,7 +98,8 @@ export default function Home() {
             <p>
               Continue learning and
               complete your weekly
-              coursework.
+              coursework at your own
+              pace.
             </p>
 
             <button className="hero-btn">
@@ -94,65 +107,56 @@ export default function Home() {
             </button>
           </div>
 
-          {/* autoplay lecture video */}
+          {/* accessible video */}
           <video
-            autoPlay
-            muted
-            loop
+            controls
             className="lecture-video"
           >
             <source
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               type="video/mp4"
             />
+            Your browser does not
+            support video playback.
           </video>
         </section>
 
-        {/* autoplay audio */}
-        <audio autoPlay loop>
-          <source
-            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-            type="audio/mp3"
-          />
-        </audio>
-
-        {/* blinking notice */}
-        <section className="notice blink">
-          ⚠ ASSIGNMENT DEADLINE:
-          11:59 PM TODAY
+        {/* notice */}
+        <section className="notice">
+          Assignment deadline:
+          Today at 11:59 PM
         </section>
 
-        {/* rotating updates */}
-        <section className="rotating-banner pulse">
-
+        {/* academic updates */}
+        <section className="rotating-banner">
           <h2>
-            🚨 Academic Updates
+            Academic Updates
           </h2>
 
           <div className="rotating-card">
-            MIDTERM EXAM STARTS TOMORROW
+            Midterm exam starts
+            tomorrow
           </div>
 
           <div className="rotating-card">
-            FINAL PROJECT SUBMISSION
-            CLOSES IN 8 HOURS
+            Final project submission
+            closes in 8 hours
           </div>
 
           <div className="rotating-card">
-            NEW LIVE CLASS AVAILABLE NOW
+            A new live class is now
+            available
           </div>
-
         </section>
 
         {/* stats */}
         <section className="stats-grid">
-
           <div className="stat-card">
             <h3>Courses</h3>
             <p>12 Active</p>
           </div>
 
-          <div className="stat-card pulse">
+          <div className="stat-card">
             <h3>Assignments</h3>
             <p>5 Pending</p>
           </div>
@@ -162,29 +166,26 @@ export default function Home() {
             <p>92%</p>
           </div>
 
-          <div className="stat-card pulse">
+          <div className="stat-card">
             <h3>Upcoming Exams</h3>
             <p>3</p>
           </div>
-
         </section>
 
         {/* courses */}
         <section className="courses">
-
           <h2>
             My Courses
           </h2>
 
           <div className="course-grid">
-
             {courses.map((course, index) => (
-              <div
+              <article
                 className="course-card"
                 key={index}
               >
                 <span className="course-tag">
-                  ACTIVE
+                  Active
                 </span>
 
                 <h3>
@@ -214,79 +215,63 @@ export default function Home() {
                 </p>
 
                 <button className="tiny-btn">
-                  OPEN
+                  Open Course
                 </button>
-
-                {/* hidden clickable */}
-                <div
-                  className="ghost-click"
-                  tabIndex={0}
-                  title="hidden clickable"
-                />
-              </div>
+              </article>
             ))}
-
           </div>
-
         </section>
 
-        {/* dense notice board */}
+        {/* notice board */}
         <section className="important">
-
           <h2>
             Student Notice Board
           </h2>
 
-          <p className="dense-text">
-            Students are reminded that
-            assignment deadlines,
-            coursework evaluations,
-            quizzes, practical sessions,
-            examination requirements,
-            lecture attendance,
-            participation tracking,
-            online submissions,
-            student portal updates,
-            academic announcements,
-            and assessment schedules
-            must be checked frequently.
-            Please monitor notifications,
-            deadlines, grade releases,
-            and classroom changes to
-            avoid missing important
-            academic information.
-          </p>
+          <div className="dense-text">
+            <p>
+              Students are reminded to
+              regularly review assignment
+              deadlines, coursework,
+              quizzes, practical sessions,
+              and examination schedules.
+            </p>
 
+            <p>
+              Please monitor notifications,
+              grade releases, classroom
+              updates, and online
+              submissions to avoid missing
+              important academic
+              information.
+            </p>
+          </div>
         </section>
 
         {/* notifications */}
         <section className="notifications">
-
           <h2>
             Recent Notifications
           </h2>
 
-          <div className="notification-card pulse">
-            🔔 New assignment uploaded
+          <div className="notification-card">
+            New assignment uploaded
           </div>
 
           <div className="notification-card">
-            📘 Lecture slides updated
+            Lecture slides updated
           </div>
 
-          <div className="notification-card blink">
-            ⚠ Exam registration closes
+          <div className="notification-card">
+            Exam registration closes
             today
           </div>
 
-          <div className="notification-card shake">
-            🚨 Live lecture starts now
+          <div className="notification-card">
+            Live lecture starts soon
           </div>
-
         </section>
-
       </section>
-
     </main>
   );
 }
