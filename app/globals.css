@@ -628,3 +628,140 @@ p,
     max-width: 100%;
   }
 }
+
+/* ==========================================
+   FINAL FIX — OVERLY WIDE READING LINES
+========================================== */
+
+/* page content should not stretch too much */
+.content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+
+  /* narrower content area */
+  max-width: 920px;
+
+  padding: 100px 32px 40px;
+}
+
+/* make reading sections narrower */
+.hero,
+.exam-popup,
+.rotating-banner,
+.important,
+.notifications,
+.courses,
+.notice {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* long-form readable text */
+.hero p,
+.exam-popup p,
+.notice,
+.rotating-card,
+.notification-card,
+.dense-text,
+.course-card p {
+  max-width: 55ch;
+  line-height: 1.8;
+}
+
+/* headings should not span too wide */
+.hero h1 {
+  max-width: 16ch;
+}
+
+h2,
+h3 {
+  max-width: 28ch;
+}
+
+/* dense notice board */
+.dense-text {
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+/* course cards should not become huge */
+.course-grid {
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 340px));
+
+  justify-content: center;
+}
+
+.course-card {
+  width: 100%;
+  max-width: 340px;
+}
+
+.course-card h3 {
+  max-width: 24ch;
+  line-height: 1.6;
+}
+
+.course-card p {
+  max-width: 38ch;
+}
+
+/* notifications width */
+.notification-card {
+  width: 100%;
+  max-width: 55ch;
+}
+
+/* update cards width */
+.rotating-card {
+  width: 100%;
+  max-width: 55ch;
+}
+
+/* announcement width */
+.ticker-text {
+  max-width: 55ch;
+  margin-inline: auto;
+}
+
+/* hero content */
+.hero > div {
+  max-width: 52ch;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 90px 20px 30px;
+  }
+
+  .hero,
+  .exam-popup,
+  .rotating-banner,
+  .important,
+  .notifications,
+  .courses,
+  .notice {
+    max-width: 100%;
+  }
+
+  .hero p,
+  .exam-popup p,
+  .dense-text,
+  .notification-card,
+  .rotating-card {
+    max-width: 100%;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    max-width: 100%;
+  }
+}
